@@ -44,21 +44,27 @@ exports["Repl"] = {
       debug: false
     });
 
+    // Be extra-careful to guard against calling test.done twice here.
+    // In some test runs on Travis we see this "reallyExit" stub called twice
+    // (which shouldn't be possible, but is happening)
+    // and when nodeunit's `test.done()` is called more than once in a test
+    // it causes an error
+    // > Cannot read property 'setUp' of undefined
+    // See https://github.com/caolan/nodeunit/issues/234
+    var calledTestDone = false;
     var reallyExit = this.sandbox.stub(process, "reallyExit", function() {
-      console.log("reallyExit called");
-      reallyExit.restore();
-      test.done();
+      if (!calledTestDone) {
+        reallyExit.restore();
+        calledTestDone = true;
+        test.done();
+      }
     });
 
     board.on("ready", function() {
-      console.log("ready event handler");
       this.on("exit", function() {
-        console.log("exit event handler");
         test.ok(true);
       });
-      console.log("about to call close");
       this.repl.close();
-      console.log("called close");
     });
 
     io.emit("connect");
