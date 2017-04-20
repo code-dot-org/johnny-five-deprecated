@@ -264,7 +264,8 @@ exports["Animation -- Servo"] = {
     var val = this.animation.tweenedValue(indices, progress);
     console.log("val: " + val);
 
-    test.ok(Math.abs(val - 74.843) < 0.01);
+    test.ok(Math.abs(val - 74.843) < 0.01,
+      "Expected " + val + " to be within 0.01 of 74.843");
     test.done();
   },
 
