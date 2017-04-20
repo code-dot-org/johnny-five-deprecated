@@ -243,6 +243,10 @@ exports["Animation -- Servo"] = {
   },
 
   keyframeEasing: function(test) {
+    // Don't allow time to advance in this test
+    // Otherwise, occasionally enough time will pass during execution for
+    // progress to advance between setup and assertion, making the test flaky.
+    this.clock = this.sandbox.useFakeTimers();
     console.log("\nTest: keyframeEasing");
     this.animation = new Animation(this.a);
     test.expect(1);
