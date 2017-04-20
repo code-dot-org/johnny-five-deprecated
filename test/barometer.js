@@ -56,6 +56,7 @@ exports["Barometer -- MPL115A2"] = {
     this.i2cWriteReg.reset();
     this.i2cReadOnce.reset();
 
+    // TODO: Make this test less timing-dependent
     var interval = setInterval(function() {
 
       if (this.i2cWriteReg.callCount === 1) {

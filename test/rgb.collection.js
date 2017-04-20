@@ -31,6 +31,7 @@ function testLedRgbCollectionShape(test) {
     test.equal(typeof this.rgbs[method.name], tOf);
   }, this);
 
+  console.log("Calling test.done in testLedRgbCollectionShape");
   test.done();
 }
 
@@ -65,6 +66,7 @@ exports["RGB.Collection"] = {
       this[method] = this.sandbox.spy(RGB.prototype, method);
     }.bind(this));
 
+    console.log("Calling done in setUp");
     done();
   },
 
@@ -76,12 +78,14 @@ exports["RGB.Collection"] = {
     Board.purge();
     RGB.purge();
     this.sandbox.restore();
+    console.log("Calling done in tearDown");
     done();
   },
 
   instanceof: function(test) {
     test.expect(1);
     test.equal(RGB.Collection([ {pins: [3, 4, 5]}, {pins: [9, 10, 11]} ]) instanceof RGB.Collection, true);
+    console.log("Calling test.done in instanceof");
     test.done();
   },
 
@@ -99,6 +103,7 @@ exports["RGB.Collection"] = {
     });
 
     test.equal(rgbs.length, 2);
+    console.log("Calling test.done in initFromObject");
     test.done();
   },
 
@@ -111,6 +116,7 @@ exports["RGB.Collection"] = {
     ]);
 
     test.equal(rgbs.length, 2);
+    console.log("Calling test.done in initFromArrayOfPinNumbers");
     test.done();
   },
 
@@ -123,6 +129,7 @@ exports["RGB.Collection"] = {
     ]);
 
     test.equal(rgbs.length, 2);
+    console.log("Calling test.done in initFromArrayOfRGBOptions");
     test.done();
   },
 
@@ -133,6 +140,7 @@ exports["RGB.Collection"] = {
     var rgbs = new RGB.Collection([this.a, this.b]);
 
     test.equal(rgbs.length, 2);
+    console.log("Calling test.done in initFromLeds");
     test.done();
   },
 
@@ -150,6 +158,7 @@ exports["RGB.Collection"] = {
     test.equal(this.blink.callCount, 2);
     test.equal(this.stop.callCount, 2);
 
+    console.log("Calling test.done in blink");
     test.done();
   },
 
@@ -166,6 +175,7 @@ exports["RGB.Collection"] = {
 
     test.equal(this.blink.callCount, 2);
     test.notEqual(this.blink.lastCall.args[1], noop);
+    console.log("Calling test.done in callbacks");
     test.done();
   },
 
@@ -181,7 +191,8 @@ exports["RGB.Collection"] = {
     var callback = this.sandbox.spy(function() {
       test.equal(this.blink.callCount, 2);
       test.equal(callback.callCount, 1);
-      test.done();
+      console.log("Calling test.done() in callbacksNoDuration");
+      test.done();// TODO: Possible cause of setUp error
     }.bind(this));
 
     rgbs.blink(callback);
@@ -206,6 +217,7 @@ exports["RGB.Collection"] = {
 
     test.equal(this.blink.callCount, 2);
     test.equal(spy.callCount, 2);
+    console.log("Calling test.done in noCallbackNoop");
     test.done();
   },
 
@@ -263,6 +275,7 @@ exports["RGB.Collection"] = {
       ]
     ]);
 
+    console.log("Calling test.done in Animation.normalize");
     test.done();
   },
 
@@ -286,6 +299,7 @@ exports["RGB.Collection"] = {
       [ { easing: "linear", value: { red: 255, green: 0, blue: 0 } } ],
       null
     ]);
+    console.log("Calling test.done in Animation.normalize: frame === null");
     test.done();
   },
 
@@ -306,6 +320,7 @@ exports["RGB.Collection"] = {
     ]);
 
     test.equal(this.color.callCount, 2);
+    console.log("Calling test.done in Animation.render");
     test.done();
   },
 };
