@@ -255,10 +255,14 @@ exports["Animation -- Servo"] = {
     };
     segment.progress = 0.9;
     this.animation.enqueue(segment);
+    console.log("\nthis.animation.playLoop.calledAt: " + this.animation.playLoop.calledAt);
 
     var progress = this.animation.calculateProgress(this.animation.playLoop.calledAt);
+    console.log("progress: " + progress);
     var indices = this.animation.findIndices(progress);
+    console.log("indices: " + JSON.stringify(indices));
     var val = this.animation.tweenedValue(indices, progress);
+    console.log("val: " + val);
 
     test.ok(Math.abs(val - 74.843) < 0.01);
     test.done();
