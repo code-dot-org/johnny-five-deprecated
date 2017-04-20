@@ -181,7 +181,7 @@ exports["RGB.Collection"] = {
     var callback = this.sandbox.spy(function() {
       test.equal(this.blink.callCount, 2);
       test.equal(callback.callCount, 1);
-      test.done();// TODO: Possible cause of setUp error
+      test.done();
     }.bind(this));
 
     rgbs.blink(callback);
