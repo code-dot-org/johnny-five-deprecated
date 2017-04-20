@@ -45,12 +45,14 @@ exports["Repl"] = {
     });
 
     var reallyExit = this.sandbox.stub(process, "reallyExit", function() {
+      console.log("reallyExit called");
       reallyExit.restore();
       test.done();
     });
 
     board.on("ready", function() {
       this.on("exit", function() {
+        console.log("exit event handler");
         test.ok(true);
       });
       this.repl.close();
