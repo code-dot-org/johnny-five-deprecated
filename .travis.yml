@@ -25,6 +25,3 @@ notifications:
     on_start: false     # default: false
 env:
   - NO_SERIALPORT_INSTALL=1
-
-after_success:
-  - npm run test-cover && npm run coveralls
