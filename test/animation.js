@@ -243,7 +243,7 @@ exports["Animation -- Servo"] = {
   },
 
   keyframeEasing: function(test) {
-
+    console.log("\nTest: keyframeEasing");
     this.animation = new Animation(this.a);
     test.expect(1);
 
@@ -255,7 +255,7 @@ exports["Animation -- Servo"] = {
     };
     segment.progress = 0.9;
     this.animation.enqueue(segment);
-    console.log("\nthis.animation.playLoop.calledAt: " + this.animation.playLoop.calledAt);
+    console.log("this.animation.playLoop.calledAt: " + this.animation.playLoop.calledAt);
 
     var progress = this.animation.calculateProgress(this.animation.playLoop.calledAt);
     console.log("progress: " + progress);
