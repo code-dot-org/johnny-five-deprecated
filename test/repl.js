@@ -51,11 +51,14 @@ exports["Repl"] = {
     });
 
     board.on("ready", function() {
+      console.log("ready event handler");
       this.on("exit", function() {
         console.log("exit event handler");
         test.ok(true);
       });
+      console.log("about to call close");
       this.repl.close();
+      console.log("called close");
     });
 
     io.emit("connect");
