@@ -260,7 +260,7 @@ exports["Animation -- Servo"] = {
     var indices = this.animation.findIndices(progress);
     var val = this.animation.tweenedValue(indices, progress);
 
-    test.ok(Math.abs(val - 74.843 < 0.01));
+    test.ok(Math.abs(val - 74.843) < 0.01);
     test.done();
   },
 
