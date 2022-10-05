@@ -1,6 +1,6 @@
 {
-  "name": "@code-dot-org/johnny-five",
-  "description": "Code.org fork of rwaldron/johnny-five: The JavaScript Robotics and Hardware Programming Framework. Use with: Arduino (all models), Electric Imp, Beagle Bone, Intel Galileo & Edison, Linino One, Pinoccio, pcDuino3, Raspberry Pi, Particle/Spark Core & Photon, Tessel 2, TI Launchpad and more!",
+  "name": "@code-dot-org/johnny-five-deprecated",
+  "description": "The deprecated Code.org fork of rwaldron/johnny-five: The JavaScript Robotics and Hardware Programming Framework. Use with: Arduino (all models), Electric Imp, Beagle Bone, Intel Galileo & Edison, Linino One, Pinoccio, pcDuino3, Raspberry Pi, Particle/Spark Core & Photon, Tessel 2, TI Launchpad and more!",
   "version": "0.11.1-cdo.2",
   "homepage": "https://johnny-five.io",
   "author": {
@@ -249,10 +249,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/code-dot-org/johnny-five.git"
+    "url": "https://github.com/code-dot-org/johnny-five-deprecated.git"
   },
   "bugs": {
-    "url": "https://github.com/code-dot-org/johnny-five/issues"
+    "url": "https://github.com/code-dot-org/johnny-five-deprecated/issues"
   },
   "license": "MIT",
   "main": "lib/johnny-five",
