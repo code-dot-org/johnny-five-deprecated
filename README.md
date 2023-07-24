@@ -1,6 +1,8 @@
 ![](https://github.com/rwaldron/johnny-five/raw/master/assets/sgier-johnny-five.png)
 
-# Johnny-Five
+# Johnny-Five-DEPRECATED
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
 ### The JavaScript Robotics Programming Framework
 
 <!-- 
@@ -317,8 +319,8 @@ To interactively navigate the examples, visit the [Johnny-Five examples](http://
 
 ### Proximity
 - [Proximity](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity.md)
-- [Proximity - EVShield EV3 (IR)](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-EVS_EV3_IR-alert.md)
 - [Proximity - EVShield EV3 (IR)](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-EVS_EV3_IR.md)
+- [Proximity - EVShield EV3 (IR)](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-EVS_EV3_IR-alert.md)
 - [Proximity - EVShield EV3 (Ultrasonic)](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-EVS_EV3_US.md)
 - [Proximity - EVShield EV3 (Ultrasonic)](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-EVS_EV3_US-alert.md)
 - [Proximity - GP2Y0A710K0F](https://github.com/rwaldron/johnny-five/blob/master/docs/proximity-GP2Y0A710K0F.md)
